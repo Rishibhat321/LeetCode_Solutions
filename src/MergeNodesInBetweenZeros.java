@@ -1,16 +1,16 @@
 import java.util.*;
-class ListNode{
+class ListNode1{
     int val;
-    ListNode next;
+    ListNode1 next;
 
-    ListNode(int d){
+    ListNode1(int d){
         val = d;
         next = null;
     }
 }
 public class MergeNodesInBetweenZeros {
 
-    public  static ListNode mergeNodes(ListNode head) {
+    public  static ListNode1 mergeNodes(ListNode1 head) {
 
         if(head==null){
             return null;
@@ -25,18 +25,18 @@ public class MergeNodesInBetweenZeros {
         }
 
 
-        ListNode curr = head;
+        ListNode1 curr = head;
         int d = 0;
 
-        ListNode prev = new ListNode(-1);
-        ListNode c = prev;
+        ListNode1 prev = new ListNode1(-1);
+        ListNode1 c = prev;
 
         while(curr!=null){
             if(curr.val!=0){
                 d += curr.val;
             }
             else if(curr.val==0 && d!=0){
-                ListNode temp = new ListNode(d);
+                ListNode1 temp = new ListNode1(d);
                 prev.next=temp;
                 prev=prev.next;
                 d=0;
@@ -52,19 +52,19 @@ public class MergeNodesInBetweenZeros {
     }
     public static void main(String[] args) {
 
-        ListNode node = new ListNode(0);
-        node.next = new ListNode(3);
-        node.next.next  =new ListNode(1);
-        node.next.next.next = new ListNode(0);
-        node.next.next.next.next = new ListNode(4);
-        node.next.next.next.next.next = new ListNode(5);
-        node.next.next.next.next.next.next = new ListNode(2);
-        node.next.next.next.next.next.next.next = new ListNode(0);
+        ListNode1 node = new ListNode1(0);
+        node.next = new ListNode1(3);
+        node.next.next  =new ListNode1(1);
+        node.next.next.next = new ListNode1(0);
+        node.next.next.next.next = new ListNode1(4);
+        node.next.next.next.next.next = new ListNode1(5);
+        node.next.next.next.next.next.next = new ListNode1(2);
+        node.next.next.next.next.next.next.next = new ListNode1(0);
 
 
-        ListNode res = mergeNodes(node);
+        ListNode1 res = mergeNodes(node);
 
-        ListNode prev = res;
+        ListNode1 prev = res;
 
         while(prev!=null){
             System.out.print(prev.val + " ");
